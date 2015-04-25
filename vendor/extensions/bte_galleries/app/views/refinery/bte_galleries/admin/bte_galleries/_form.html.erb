@@ -1,0 +1,24 @@
+<%= form_for [refinery, :bte_galleries_admin, @bte_gallery] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @bte_gallery,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @bte_gallery.photo,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :caption -%>
+    <%= f.text_field :caption -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.bte_galleries.admin.bte_galleries.bte_gallery'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @bte_gallery.caption) -%>
+<% end -%>

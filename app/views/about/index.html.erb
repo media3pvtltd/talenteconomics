@@ -1,0 +1,43 @@
+<!-- Carousel -->
+<%= render :partial => "home/slider" %>
+
+<!-- About the author -->
+<%= render :partial => "about/aboutme" %>
+
+<!-- Social Feed -->
+<%= render :partial => "home/social" %>
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<!-- jQuery REVOLUTION Slider  -->
+<%= javascript_include_tag "plugins/jquery.themepunch.plugins.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "plugins/jquery.themepunch.revolution.min.js", "data-turbolinks-track" => true %>
+<script type="text/javascript">
+
+        var revapi;
+
+        jQuery(document).ready(function() {
+
+               revapi = jQuery('.tp-banner').revolution(
+                {
+                    delay:9000,
+                    startwidth:1700,
+                    startheight:600,
+                    hideThumbs:true,
+                    navigationType:"none",
+                    fullWidth:"on",
+                    forceFullWidth:"on"
+                });
+
+        }); //ready
+
+</script>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "validate", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "classie", "data-turbolinks-track" => true %>

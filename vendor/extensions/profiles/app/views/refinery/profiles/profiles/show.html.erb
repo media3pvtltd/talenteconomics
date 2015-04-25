@@ -1,0 +1,81 @@
+<% content_for :body_content_title do %>
+  <%= @profile.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @profile.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Location</h1>
+    <p>
+      <%=raw @profile.location %>
+    </p>
+  </section>
+  <section>
+    <h1>Certification Date</h1>
+    <p>
+      <%=raw @profile.certification_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @profile.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @profile.content %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture</h1>
+    <p>
+      <%= image_fu @profile.picture, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Google Profile</h1>
+    <p>
+      <%=raw @profile.google_profile %>
+    </p>
+  </section>
+  <section>
+    <h1>Facebook Profile</h1>
+    <p>
+      <%=raw @profile.facebook_profile %>
+    </p>
+  </section>
+  <section>
+    <h1>Twitter Profile</h1>
+    <p>
+      <%=raw @profile.twitter_profile %>
+    </p>
+  </section>
+  <section>
+    <h1>Linkedin Profile</h1>
+    <p>
+      <%=raw @profile.linkedin_profile %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="profiles">
+      <% @profiles.each do |profile| %>
+        <li>
+          <%= link_to profile.name, refinery.profiles_profile_path(profile) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,227 @@
+<%= form_tag assessment_url, :id => 'wrapped' do %>
+	<div id="middle-wizard">
+		<div class="step">
+			<div class="row">
+				<h3 class="col-md-10">Enter your personal info</h3>
+                <div class="col-md-6">
+					<ul class="data-list">
+						<li><div class="form-group">
+							<%= text_field_tag :first_name, '' , :class => 'required form-control', :placeholder => 'First Name' %>
+							<span class="input-icon"><i class="icon-user"></i></span>
+						</div></li>
+						<li><div class="form-group">
+							<%= text_field_tag :last_name, '' , :class => 'required form-control', :placeholder => 'Last Name' %>
+							<span class="input-icon"><i class="icon-user"></i></span>
+						</div></li>
+						<li><div class="form-group">
+							<%= email_field :email, '' , :class => 'required form-control', :placeholder => 'Your Email' %>
+							<span class="input-icon"><i class="icon-email"></i></span>
+						</div></li>
+						<li><div class="form-group">
+							<%= text_field_tag :organization, '' , :class => 'required form-control', :placeholder => 'Organization' %>
+							<span class="input-icon"><i class="icon-eye"></i></span>
+						</div></li>
+						<li><div class="form-group">
+							<%= text_field_tag :title, '' , :class => 'required form-control', :placeholder => 'Title' %>
+							<span class="input-icon">
+							<i class="icon-email"></i></span>
+						</div></li>
+						
+					</ul>
+				</div><!-- end col-md-6 -->
+                
+				<div class="col-md-6">
+               
+                    
+					<ul class="data-list" style="margin:0; padding:0;">
+						<li><div class="form-group"><input type="text" name="" class="required form-control" placeholder="Assessed Organization"><span class="input-icon"><i class="icon-email"></i></span></div></li>
+						<li><div class="styled-select">
+							<%= select_tag(:industry, options_for_select(Answer::IND), prompt: 'Select Industry', :class => 'form-control') %>
+						</div>
+						</li>
+						<li><div class="styled-select">
+							<%= select_tag(:country, options_for_select(Answer::REG), prompt: 'Select your Country', :class => 'form-control') %>
+						</div>
+						</li>
+						<li><div class="styled-select">
+							<%= select_tag(:role, options_for_select(Answer::ROLE), prompt: 'Select your Role', :class => 'form-control') %>
+						</div>
+						</li>
+
+                    </ul>
+				</div><!-- end col-md-6 -->
+			</div><!-- end row -->
+        </div><!-- end step-->
+        
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>1. The Local Economic Environment</h3>
+				<p>Think of both the location and industry you operate in and rate the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Industry circumstances for business', :name => :alpha_1, :low => 'Mature', :high => 'Evolving'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Labour laws and practices', :name => :alpha_2, :low => 'Mature', :high => 'Evolving'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Quality of political institutions (rule of law, economic freedoms, prevalence of corrupt practices) ', :name => :alpha_3, :low => 'Developed', :high => 'Poor' } %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '4. State of capital markets', :name => :alpha_4, :low => 'Mature', :high => 'Evolving'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '5. Intellectual property protection', :name => :alpha_5, :low => 'High', :high => 'Low'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '6. The country"s economic growth rate ', :name => :alpha_6, :low => 'Low Growth', :high => 'High Growth'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '7. Industry revenue pie', :name => :alpha_7, :low => 'Declining', :high => 'Growing Rapidly'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '8. Regulation changes', :name => :alpha_8, :low => 'Static', :high => 'Frequent'} %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+        
+		<div class="step row">
+			<div class="col-md-12">
+				<h3>2. External Talent Supply</h3>
+				<p>Reflect on how easy it is to find talent in this location, and answer the following questions</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Availability of graduates/undergrads for internships and placement ', :name => :beta_1, :low => 'High', :high => 'Low'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Availability of mid-management talent (both genders)', :name => :beta_2, :low => 'Easy', :high => 'Difficult'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Government policy on overseas talent', :name => :beta_3, :low => 'Facilitative', :high => 'Restrictive' } %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '4. Ease of hiring', :name => :beta_4, :low => 'Easy to build an 
+						interview longlist', :high => 'Difficult to build an interview longlist'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '5. Quality of hiring sources', :name => :beta_5, :low => 'Developed', :high => 'Under developed'} %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+				<h3>3. The Quality of External Talent</h3>
+				<p>Reflect on the quality of candidates available for hiring in this location</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Availability of experienced technical talent', :name => :gamma_1, :low => 'High', :high => 'Low'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => "2. A new hire's average time to proficiency", :name => :gamma_2, :low => 'Few days', :high => 'Several months'} %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+				<h3>4. The Maturity and Market Share of Your Business</h3>
+				<p>Reflect on your position amongst local competitors and answer the following questions</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Your industry position', :name => :delta_1, :low => 'No 1 - we are the market maker', :high => 'Not in the top 5'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => "2. Your brand awareness", :name => :delta_2, :low => 'Relatively well known', :high => 'Relatively unknown'} %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+        
+
+        <div class="step row">
+			<div class="col-md-12">
+				<h3>5. Your Market Standing as an Employer</h3>
+				<p>Reflect on what attracts talent to this company and answer the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Your ability to attract talent from key competitors', :name => :omega_1, :low => 'Easy', :high => 'Difficult'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. How many of your recent leavers went on to join a key competitor', :name => :omega_2, :low => 'Relatively few', :high => 'A majority'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Rate the quality of your employee value proposition', :name => :omega_3, :low => 'Well established', :high => 'We don’t have one' } %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+				<h3>6. The Readiness of Internal Talent</h3>
+				<p>Think of the current employees within this firm and rate the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. The strength of your companies initial onboarding program (an employees first 90 days)', :name => :epsilon_1, :low => 'Structured & consistent', :high => 'Inconsistent'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Levels of internal support available to new employees', :name => :epsilon_2, :low => 'High', :high => 'Low'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Levels of distributed equity (cross functional collaboration and internal teamwork)', :name => :epsilon_3, :low => 'Majority are interdependent', :high => 'Majority are dependent' } %>
+				</ul>
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>7. Your Current Management Maturity</h3>
+				<p>Next, reflect on the senior leaders / executive team at your firm and rate the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Group identity- How is the senior leadership team viewed within the organisation?', :name => :zeta_1, :low => 'Integrated team', :high => 'Fragmented'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Group intent - How would you rate the current levels of management discussion and planning? ', :name => :zeta_2, :low => 'Strategic', :high => 'Tactical'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Individual identity - Does the organisation view senior managers as inspirational ?', :name => :zeta_3, :low => 'Role models', :high => 'Undistinguished' } %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '4. Leadership Ability', :name => :zeta_4, :low => 'Consistently Developed ', :high => 'Inconsistent'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '5. Leadership Climate ', :name => :zeta_5, :low => 'Trusting', :high => 'Political'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '6. Leadership performance', :name => :zeta_6, :low => 'High performing team', :high => 'Underperforming team'} %>
+				</ul>
+			
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>8. Your Flow Circumstance</h3>
+				<p>Think of how your company is organised and rate the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Internal mobility policy', :name => :eta_1, :low => 'Developed', :high => 'Adhoc or unclear'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Internal mobility practice', :name => :eta_2, :low => 'Easy and frequent', :high => 'Complex and sporadic'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Cross functional climate', :name => :eta_3, :low => 'Collaborative', :high => 'Competitive' } %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '4. Ease of Information access', :name => :eta_4, :low => 'Integrated', :high => 'Fragmented'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '5. Communication of strategy', :name => :eta_5, :low => 'Widespread', :high => 'Inconsistent'} %>
+				</ul>
+			
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>9. Your Innovation Index</h3>
+				<p>Consider the current pace of innovation and change within both the industry and organisation and rate the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. How much has the industry evolved / changed over the last 5 years? ', :name => :theta_1, :low => 'Much is the same', :high => 'Completely changed'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Current pace of product innovation', :name => :theta_2, :low => 'Low', :high => 'High'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Internal collaboration', :name => :theta_3, :low => 'High', :high => 'Low' } %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '4. How open is your company to new ideas?', :name => :theta_4, :low => 'Relatively Open', :high => 'Generally Closed'} %>
+				</ul>
+			
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>10. Your Change Agenda</h3>
+				<p>Consider the level of internal change facing this business</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Level of internal transformation', :name => :iota_1, :low => 'Minimal', :high => 'Significant'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Number of employees impacted', :name => :iota_2, :low => 'None', :high => 'All'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '3. Planned investments in change projects over the next three years', :name => :iota_3, :low => 'Decreasing', :high => 'Increasing Significantly' } %>
+				</ul>
+			
+			</div>
+		</div><!-- end step -->
+
+		<div class="step row">
+			<div class="col-md-12">
+			
+				<h3>11. Business Strategy</h3>
+				<p>Consider the business's strategic plans and revenue before answering the following</p>
+                <ul class="data-list-2 clearfix">
+					<%=render :partial => 'assessment/terms', :locals => {:title => '1. Projected annual growth rate', :name => :lambda_1, :low => 'Below 5%', :high => 'Over 25%'} %>
+					<%=render :partial => 'assessment/terms', :locals => {:title => '2. Planned capital infusions, mergers or acquisitions', :name => :lambda_2, :low => 'None', :high => 'Significant'} %>
+				</ul>
+			
+			</div>
+		</div><!-- end step -->
+
+
+
+
+
+		<div class="submit step" id="complete">
+                	<i class="icon-check"></i>
+					<h3>Assessment complete! Thank you for you time.</h3>
+					<button type="submit" name="process" class="submit">Submit your apply</button>
+		</div><!-- end submit step -->
+        
+	</div><!-- end middle-wizard -->
+    
+	<div id="bottom-wizard">
+		<button type="button" name="backward" class="backward">Backward</button>
+		<button type="button" name="forward" class="forward">Forward </button>
+	</div><!-- end bottom-wizard -->
+<% end %>

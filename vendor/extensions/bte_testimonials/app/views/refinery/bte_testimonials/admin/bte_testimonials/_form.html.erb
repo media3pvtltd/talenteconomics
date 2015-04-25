@@ -1,0 +1,30 @@
+<%= form_for [refinery, :bte_testimonials_admin, @bte_testimonial] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @bte_testimonial,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:content],
+                :object => "bte_testimonials/bte_testimonial" -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.bte_testimonials.admin.bte_testimonials.bte_testimonial'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @bte_testimonial.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

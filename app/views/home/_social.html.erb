@@ -1,0 +1,25 @@
+<section id="main_content_gray">
+<div class="container">
+	<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>Social Media</h2>
+    </div>
+    </div><!-- End row -->
+
+<div class="row">
+<%unless @social.nil? %>
+    <div class="col-lg-4 col-md-6 col-sm-6 box_style_1">
+     <%=raw @social.content_for(:twitter) %>
+    </div>
+        
+    <div class="col-lg-4 col-md-6 col-sm-6 box_style_1">
+     <%=raw @social.content_for(:facebook) %>
+    </div>
+    
+    <div class="col-lg-4 col-md-6 col-sm-6 box_style_1">
+     <%=raw @social.content_for(:linkedin) %>
+    </div>
+<%end %>
+</div><!-- End row -->
+ </div>   <!-- End container -->
+</section><!-- End section gray -->

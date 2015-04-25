@@ -1,0 +1,44 @@
+<section id="login_bg">
+<div  class="container">
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+		<div id="login">
+			<p class="text-center">
+				<h4>Change The Password</h4>
+			</p>
+			<hr>
+			
+			<%=form_tag  controller: "users", action: "updatepassword"  do |f|   %>
+     			<div class="form-group">
+     	<input type="hidden" name="user_id" id="user_id" value="<%= params[:id] %>">
+					<%=password_field_tag 'password','', :class=> 'form-control', :placeholder => 'New Password' %>
+					<span class="input-icon"><i class=" icon-user"></i></span>
+				</div>
+				<div class="form-group">
+     	<input type="hidden" name="user_email" id="user_email" value="<%= params[:email] %>">
+					<%=password_field_tag 'conformpassword','', :class=> 'form-control', :placeholder => 'Conform Password' %>
+					<span class="input-icon"><i class=" icon-user"></i></span>
+				</div>
+				
+				
+				<%=submit_tag 'Submit', :class=> 'button_fullwidth' %>
+			<%end %>
+		</div>
+	</div>
+</div>
+</div>
+</section> <!-- End login -->
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "validate", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "classie", "data-turbolinks-track" => true %>
+

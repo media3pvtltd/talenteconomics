@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: 建立新的 Research
+            reorder: 对 Researches 重新排序
+            reorder_done: 对 Researches 的重新排序结束
+          records:
+            title: Researches
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Researches yet. Click "Add New Research" to add your first research.
+            no_items_yet: 目前没有 Researches . 点击 "Add New Research" 创建一个research.
+          research:
+            view_live_html: 查看 research 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 research
+            delete: 永久删除 research
+      researches:
+        show:
+          other: 其他 Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

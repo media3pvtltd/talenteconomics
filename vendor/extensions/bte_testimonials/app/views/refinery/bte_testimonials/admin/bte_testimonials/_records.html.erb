@@ -1,0 +1,16 @@
+<%= render 'refinery/admin/search_header', :url => refinery.bte_testimonials_admin_bte_testimonials_path %>
+<div class='pagination_container'>
+  <% if @bte_testimonials.any? %>
+    <%= render 'bte_testimonials' %>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'refinery.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+</div>

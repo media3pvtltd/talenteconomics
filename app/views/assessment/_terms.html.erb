@@ -1,0 +1,12 @@
+<li style="height:inherit;">
+	<h5><%= title %></h5>
+	<div class="terms">
+		<span class='low-term'><%= low %></span>
+			<% (1..10).each do |num| %>
+				<%= radio_button_tag(name, "#{num}",true, :class => 'required') %>
+				<span><%=num%></span>
+			<% end -%>
+		<span class='high-term'><%= high %></span>
+	</div>
+	<div class="clearfix"></div>
+</li>

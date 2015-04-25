@@ -1,0 +1,58 @@
+<!-- Toggle Switch -->
+	<%= stylesheet_link_tag    "jquery-switch", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "aero", media: "all", "data-turbolinks-track" => true %>
+
+<section id="wizard_bg">
+<div class="container">
+<!-- Start Survey container -->
+<div id="survey_container">
+	<div id="top-wizard">
+		<h4>Benchmarking database</h4>
+	</div><!-- end top-wizard -->
+    
+	<div id="middle-wizard">
+		<div class="step">
+			<div class="row">
+				<%= form_tag(benchmarking_path, class: 'form-inline', :style => 'text-align:center') do %>
+				  <%= select_tag(:country, options_for_select(@country_list), prompt: 'All countries', :class => 'form-control') %>
+				  <%= select_tag(:industry, options_for_select(@industry_list),prompt: 'All Industries', :class => 'form-control') %>
+				  <%= submit_tag "Search", :class => 'btn btn-info' %>
+				<% end %>
+			</div><!-- end row -->
+			<%if params[:parseit] %>
+				<%=render :partial => 'assessment/bench' %>
+			<%else %>
+			<div class="row" style="min-height:220px;">
+				
+			</div>
+			<%end %>
+        </div><!-- end step-->
+    </div><!-- end middle-wizard -->
+    
+	<div id="bottom-wizard">
+		
+	</div><!-- end bottom-wizard -->
+    
+</div><!-- end Survey container -->
+
+</div>
+</section><!-- end section main container -->
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'jquery-ui-1.8.12.min.js', "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wizard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.icheck.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "wizard_func.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions.js", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "classie.js", "data-turbolinks-track" => true %>
+

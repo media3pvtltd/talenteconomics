@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      bte_galleries:
+        title: Bte Galleries
+    bte_galleries:
+      admin:
+        bte_galleries:
+          actions:
+            create_new: Přidat Bte Gallery
+            reorder: Řadit Bte Galleries
+            reorder_done: Konec řazení Bte Galleries
+          records:
+            title: Bte Galleries
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Bte Galleries. Zvolte "Přidat Bte Gallery" pro přidání prvního bte gallery.
+          bte_gallery:
+            view_live_html: Zobrazit náhled bte gallery<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit bte gallery
+            delete: Smazat bte gallery
+      bte_galleries:
+        show:
+          other: Další Bte Galleries
+  activerecord:
+    attributes:
+      'refinery/bte_galleries/bte_gallery':
+        photo: Photo
+        caption: Caption

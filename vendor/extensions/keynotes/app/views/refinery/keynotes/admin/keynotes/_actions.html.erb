@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Keynotes::Admin::KeynotesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.keynotes_admin_keynotes_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_keynotes_admin_keynote_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Keynotes::Admin::KeynotesController.sortable? && ::Refinery::Keynotes::Keynote.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Keynotes"),
+                 refinery.keynotes_admin_keynotes_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Keynotes"),
+                 refinery.keynotes_admin_keynotes_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Nieuwe Research toevoegen
+            reorder: De volgorde van de Researches wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Research-volgorde
+          records:
+            title: Researches
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Researches. Druk op 'Nieuwe Research toevoegen' om de eerste toe te voegen.
+          research:
+            view_live_html: Deze research op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze research
+            delete: Deze research definitief verwijderen
+      researches:
+        show:
+          other: Andere Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

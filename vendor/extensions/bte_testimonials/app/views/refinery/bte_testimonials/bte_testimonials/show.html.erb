@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @bte_testimonial.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @bte_testimonial.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @bte_testimonial.content %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="bte_testimonials">
+      <% @bte_testimonials.each do |bte_testimonial| %>
+        <li>
+          <%= link_to bte_testimonial.name, refinery.bte_testimonials_bte_testimonial_path(bte_testimonial) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

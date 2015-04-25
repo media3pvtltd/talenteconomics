@@ -1,0 +1,36 @@
+cs:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Přidat Profile
+            reorder: Řadit Profiles
+            reorder_done: Konec řazení Profiles
+          records:
+            title: Profiles
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Profiles. Zvolte "Přidat Profile" pro přidání prvního profile.
+          profile:
+            view_live_html: Zobrazit náhled profile<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit profile
+            delete: Smazat profile
+      profiles:
+        show:
+          other: Další Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        name: Name
+        location: Location
+        certification_date: Certification Date
+        email: Email
+        content: Content
+        picture: Picture
+        google_profile: Google Profile
+        facebook_profile: Facebook Profile
+        twitter_profile: Twitter Profile
+        linkedin_profile: Linkedin Profile

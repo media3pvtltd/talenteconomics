@@ -1,0 +1,51 @@
+<section id="sub-header_pattern_1">
+  	<div class="container">
+    <%unless @consulting.nil? %>
+    	<div class="row">
+        	<div class="col-md-12 text-center">
+            	<h1>The Consulting Process</h1>
+            </div>
+        </div><!-- End row -->
+        
+        <div class="row" id="sub-header-features">
+        	<div class="col-md-6">
+            	<h2>The Need</h2>
+                <%=raw @consulting.content_for(:need) %>
+            </div>
+            <div class="col-md-6">
+            	<h2>Our Process</h2>
+                <%=raw @consulting.content_for(:process)  %>
+            </div>
+        	
+        </div><!-- End row -->
+        <div class="row sub-header-features-class">
+            <div class="col-md-12">
+                <h2>The Outcome</h2>
+                <%=raw @consulting.content_for(:outcome) %>
+            </div>
+        </div>
+     <%end %>
+    </div><!-- End container -->
+    <div class="divider_top"></div>
+  </section>
+
+
+  <!--  Consultingcourses-->
+  <%= render :partial => "consulting/courses" %>
+
+  <!-- Join -->
+  <%= render :partial => "consulting/join" %>
+
+  
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "validate", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "classie", "data-turbolinks-track" => true %>
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  heading: MyString
+  instruction: MyString
+  summary_heading: MyString
+  rank: 1
+  low_term: MyString
+  high_term: MyString
+
+two:
+  heading: MyString
+  instruction: MyString
+  summary_heading: MyString
+  rank: 1
+  low_term: MyString
+  high_term: MyString

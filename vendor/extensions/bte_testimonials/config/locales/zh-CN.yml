@@ -1,0 +1,30 @@
+zh-CN:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: 建立新的 Bte Testimonial
+            reorder: 对 Bte Testimonials 重新排序
+            reorder_done: 对 Bte Testimonials 的重新排序结束
+          records:
+            title: Bte Testimonials
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Bte Testimonials yet. Click "Add New Bte Testimonial" to add your first bte testimonial.
+            no_items_yet: 目前没有 Bte Testimonials . 点击 "Add New Bte Testimonial" 创建一个bte testimonial.
+          bte_testimonial:
+            view_live_html: 查看 bte testimonial 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 bte testimonial
+            delete: 永久删除 bte testimonial
+      bte_testimonials:
+        show:
+          other: 其他 Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

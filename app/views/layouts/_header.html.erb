@@ -1,0 +1,23 @@
+<header>
+  	<div class="container">
+	<div class="row">
+		<div class="col-md-2 col-sm-3 col-xs-3">
+			<%=link_to "Talent Economics", root_url, :id=> "logo" %>
+		</div>
+		<div class="col-md-7 hidden-sm hidden-xs">
+			<h3 style="color:white;text-align:center">Talent Economics</h3>
+			<p style="color:white;text-align:center">THE FINE LINE BETWEEN WINNING AND LOSING THE GLOBAL WAR FOR TALENT</p>
+		</div>
+		<div class="col-md-3 col-sm-9 col-xs-9">
+			<div class=" pull-right">
+				<%if session[:main_id] %>
+					<%=link_to "Sign out", signout_path , :class => "button_top", :id => "login_top" %>
+				<%else %>
+					<%=link_to "Sign in", signin_path , :class => "button_top", :id => "login_top" %>
+				<%end %>
+				<%=link_to "Contact us", root_url+"become-talent-ecomomist#contact_us" , :class => 'button_top hidden-xs', :id => 'apply' %>
+			</div>
+		</div>
+	</div>
+</div>
+</header><!-- End header -->

@@ -1,0 +1,95 @@
+<section id="map"></section><!-- end map-->
+<!-- List of past keynotes -->
+<div style="position:relative">
+<div class="container" style="padding-bottom:60px">
+    <div class="row">
+        <div class="col-md-6">
+            <%unless @future.empty? %>
+            <h3>List of upcoming Keynotes</h3>
+            <ul class="list_1" id="past_kn">
+              <%@future.each do |f| %>
+                <li><a href="#"><%= f.title %></a></li>  
+              <%end %>
+            </ul>
+            <%end %>
+         </div>
+         <div class="col-md-6">
+            <%unless @past.empty? %>
+            <h3>List of past Keynotes</h3>
+            <ul class="list_1" id="past_kn">
+              <%@past.each do |p| %>
+                <li><a href="#"><%= p.title %></a></li>
+              <%end %>
+            </ul>    
+            <%end %>
+         </div>
+    </div>
+</div>
+<div class="divider_top"></div>
+</div>
+<!-- Multimedia Gallery -->
+<%= render :partial => 'keynotes/gallery' %>
+
+
+<div id="sub-header">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>home video</h1>
+            <h2></h2>
+            <ul class="list_ok">
+                    <li><strong>Certified</strong> and expert teachers</li>
+                    <li><strong>Extensive</strong> doumentation provided</li>
+                    <li><strong>Money back</strong> garantee</li>
+                    <li><strong>Became an exeprt</strong> in only 6 days</li>
+                </ul>
+        </div>
+        <div class="col-md-6 video">
+            <iframe src="http://player.vimeo.com/video/81607056?badge=0" allowfullscreen style="border:0;"></iframe>
+        </div>
+    </div>
+    </div>    
+</div>
+
+<!-- Join  -->
+<%= render :partial => "consulting/join" %>
+
+<!--Script   -->
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "superfish", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "validate", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.fitvids", "data-turbolinks-track" => true %>
+
+<!-- Google Maps -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<%= javascript_include_tag "mapmarker.js", "data-turbolinks-track" => true %>
+<script type="text/javascript">
+      //set up markers 
+    var myMarkers = {"markers": [
+    <%(0..(@keynotes.length-1)).each do |e| %>
+        {"latitude":<%= @keynotes[e].values[0] %> , "longitude":<%=@keynotes[e].values[1] %>, "icon": "img/map-marker2.png"},
+    <%end %>    
+            ]
+    };
+    
+    //set up map options
+    $("#map").mapmarker({
+      zoom  : 4,
+      center  : 'India',
+      markers : myMarkers
+    });
+
+</script>
+<script>
+    $(".video").fitVids();
+</script>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "classie", "data-turbolinks-track" => true %>

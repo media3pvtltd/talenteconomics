@@ -1,0 +1,28 @@
+nl:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Nieuwe Bte Testimonial toevoegen
+            reorder: De volgorde van de Bte Testimonials wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Bte Testimonial-volgorde
+          records:
+            title: Bte Testimonials
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Bte Testimonials. Druk op 'Nieuwe Bte Testimonial toevoegen' om de eerste toe te voegen.
+          bte_testimonial:
+            view_live_html: Deze bte testimonial op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze bte testimonial
+            delete: Deze bte testimonial definitief verwijderen
+      bte_testimonials:
+        show:
+          other: Andere Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

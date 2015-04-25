@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alpha: 1
+  beta: 1
+  gamma: 1
+  delta: 1
+  omega: 1
+  epsilon: 1
+  zeta: 1
+  eta: 1
+  theta: 1
+  iota: 1
+  lambda: 1
+  survey_id: 1
+
+two:
+  alpha: 1
+  beta: 1
+  gamma: 1
+  delta: 1
+  omega: 1
+  epsilon: 1
+  zeta: 1
+  eta: 1
+  theta: 1
+  iota: 1
+  lambda: 1
+  survey_id: 1

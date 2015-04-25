@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Yeni Ekle Research
+            reorder: Tekrar sirala Researches
+            reorder_done: Tekrar siralama tamamlandiResearches
+          records:
+            title: Researches
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Researches yok henuz.  Tikla "Yeni Ekle Research" eklemek senin ilk research.
+          research:
+            view_live_html: Bunu canlu research goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle research
+            delete: Bunu Sil research sonsuza dek
+      researches:
+        show:
+          other: Diger Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

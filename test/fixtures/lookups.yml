@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  grp: MyString
+  name: MyString
+  rank: 1
+  exists: false
+
+two:
+  grp: MyString
+  name: MyString
+  rank: 1
+  exists: false

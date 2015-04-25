@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Lag en ny Bte Testimonial
+            reorder: Endre rekkefølgen på Bte Testimonials
+            reorder_done: Ferdig å endre rekkefølgen Bte Testimonials
+          records:
+            title: Bte Testimonials
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Bte Testimonials enda. Klikk på "Lag en ny Bte Testimonial" for å legge til din første bte testimonial.
+          bte_testimonial:
+            view_live_html: Vis hvordan denne bte testimonial ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne bte testimonial
+            delete: Fjern denne bte testimonial permanent
+      bte_testimonials:
+        show:
+          other: Andre Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

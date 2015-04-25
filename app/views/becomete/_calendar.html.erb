@@ -1,0 +1,40 @@
+<section id="main_content_gray">
+    	<div class="container">
+        	<div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Latest Courses</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, ius minim gubergren ad.</p>
+            </div>
+        </div><!-- End row -->
+        
+        <div class="row">
+                    <%@courses.each do |c| %>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="<%=getpath(c.photo_id) %>" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="course_info col-md-12 col-sm-12 text-center">
+                                                <h4><%= c.place %></h4>
+                                                <caption><%= c.country %></caption>
+                                                <p style="padding-top:15px;padding-bottom:15px"><%= c.held_on.strftime("%d") unless c.held_on.nil? %> - <%= c.held_upto.strftime("%d %B %Y") unless c.held_upto.nil? %></p>
+                                            </div>
+                                        </div>
+                                        <div class="separator clearfix">
+                                            <p class="btn-add"> <a href="<%=getfilepath(c.brochure_id) %>" target="_blank"><i class="icon-export-4"></i> Brochure</a></p>
+                                            <p class="btn-details"> <a href="#"> Registration</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <%end %>
+        </div><!-- End row -->
+        <div class="row">
+        	<div class="col-md-12">
+        	     <a href="#" class="button_medium_outline pull-right">View all courses</a>
+            </div>
+        </div>
+        </div>   <!-- End container -->
+</section><!-- End section gray -->

@@ -1,0 +1,66 @@
+<div id="contact_us">
+	<section id="sub-header" >
+		<div class="container">
+		<div class="row">
+	    	<div class="col-md-6" id="subscribe">
+	        	<h1>Need more info?</h1>
+	            <h2 class="hidden-xs">Please complete this form and <br> we will get back to you shortly.</h2>
+	        </div>
+	        <div class="col-md-6 ">
+	        <div id="subscribe_home">
+	       <div id="message-contact-home"></div>
+			<%= form_for testme_path, :id => 'contactform_home' do |e| %>
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="form-group">
+							<input type="text" class="form-control style_2" id="first_name" name="first_name" placeholder="Name">
+							<span class="input-icon"><i class="icon-user"></i></span>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="form-group">
+							<input type="text" class="form-control style_2" id="last_name" name="last_name" placeholder="Last Name">
+	                        <span class="input-icon"><i class="icon-user"></i></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="form-group">
+							<input type="email" id="email" name="email" class="form-control style_2" placeholder="Email">
+	                        <span class="input-icon"><i class="icon-email"></i></span>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="form-group">
+							<input type="text" id="phone_contact_home" name="phone" class="form-control style_2" placeholder="Phone number">
+	                        <span class="input-icon"><i class="icon-phone"></i></span>
+						</div>
+					</div>
+				</div>
+	            <div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<textarea name="content" id="content" class="form-control style_2" style="box-shadow: 2px 2px 5px rgba(0,0,0,0.3);" placeholder="Tell us about your query..." ></textarea>
+					</div>
+				</div>
+	            </div>
+	            <div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" id="verify_contact_home" class=" form-control" placeholder="Are you human? 3 + 1 =">
+					</div>
+				</div>
+	            <div class="col-md-6">
+						<div class="form-group pull-right">
+							<input type="submit" value="Submit" class=" button_subscribe" id="submit-contact-home"/>
+					</div>
+				</div>
+	            </div>
+	            <%end %>
+	        </div>
+	        </div>
+	    </div><!-- End row -->
+	</div>
+	</section><!-- End sub-header -->
+</div>

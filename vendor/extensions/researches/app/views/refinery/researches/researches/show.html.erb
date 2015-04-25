@@ -1,0 +1,49 @@
+<% content_for :body_content_title do %>
+  <%= @research.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @research.title %>
+    </p>
+  </section>
+  <section>
+    <h1>File</h1>
+    <p>
+      <% if @research.file.present? %>
+        <%= link_to 'file', @research.file.url %>
+      <% else %>
+        file
+      <% end %>
+    </p>
+  </section>
+  <section>
+    <h1>Link</h1>
+    <p>
+      <%=raw @research.link %>
+    </p>
+  </section>
+  <section>
+    <h1>Category</h1>
+    <p>
+      <%=raw @research.category %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="researches">
+      <% @researches.each do |research| %>
+        <li>
+          <%= link_to research.title, refinery.researches_research_path(research) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

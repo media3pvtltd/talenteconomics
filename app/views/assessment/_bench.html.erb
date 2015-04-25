@@ -1,0 +1,336 @@
+<style>
+	@media print{
+	body{
+		background: #e3e3e3;
+	}
+}
+ h3,h4{color: #0c6f96;}
+ h3{margin-top:40px}
+ h4{margin-bottom:30px;}
+
+ p{margin-bottom:20px;}
+
+.values {}
+.values .mytable{background:#7cc9ea;border-radius: 5px;}
+.values table td{border-top:0px !important;}
+.values table .active{border: 0px;border-radius: 36px;}
+
+.assessment_val .row{margin-bottom:15px;}
+.round
+{
+position: absolute !important;
+border-radius: 15px !important;
+box-shadow: 1px 1px 3px #333;
+font-weight: bold;
+height: 27px;
+margin-left: -11px;
+margin-top: -3px;
+padding-top: 3px !important;
+text-align: center;
+top: 0;
+width: 30px;
+}
+.round td{padding:0px;margin:0px;padding-left:10px !important}
+
+.relate{
+    width: 100%;
+    position: relative;
+}
+.colcenter{
+   /*  transform: translateY(50%); */
+}
+.tabledown
+{
+    /* transform: translateY(33%); */
+}
+
+.mytable{
+    width: 100%;
+}
+
+.target{text-align:center}
+.target>td:first-child{padding-left:12px;width:25px;text-align:left;font-size:13px}
+.target td:last-child{width:25px;text-align:right;padding-right:12px;font-size:13px}
+
+</style>
+<%@vals = [] %>
+<%@myarr = params["parseit"].split('=') %>
+<%@myarr.each do |v| %>
+	<%if v.to_i == v.to_f %>
+		<%@vals << v.to_i %>
+	<% else %>
+		<% @vals << v.to_f.round(1) %>
+	<%end %>
+<%end %>
+<%@industry = params["industry"].to_i %>
+<%@indname = Answer::IND.select {|k| k[1] == @industry}[0][0] unless @industry == 0 %>
+<%@country = params["country"].to_i %>
+<%@countryname = Answer::REG.select {|k| k[1] == @country}[0][0] unless @country == 0%>
+<hr>
+<div class="container-fluid assessment_val" style="height:80%">
+
+	<div class="well" style="margin-top:16px">
+		<div class="row" style="margin-bottom:0px">
+			<div class="col-xs-12">
+				<div><strong>Industry</strong>:: <%= @indname unless @industry == 0 %></div>
+				<div><strong>Region</strong>:: <%= @countryname unless @country == 0 %></div>
+			</div>
+		</div>
+	</div>
+	<h4>Market Maturity</h4>
+		<div class="row">
+			<div class="col-xs-3 colcenter">Market Opportunity</div>
+			<div class="col-xs-9 values">
+				<table class="mytable">
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Developed</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[1]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[1]*19%>px 0;"><td><%=@vals[1]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Emerging</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Market Talent Pipeline</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Abundant</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[2]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[2]*19%>px 0;"><td><%=@vals[2]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Scarce</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Pipeline Proficiency</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Ready Skills</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[3]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[3]*19%>px 0;"><td><%=@vals[3]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Ready Potential</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	<h4>Organizational Readiness</h4>
+			<div class="row">
+			<div class="col-xs-3">Talent Attraction</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Employer of choice</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[5]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[5]*19%>px 0;"><td><%=@vals[5]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Challenging</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Employee Vintage</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Tenured</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[6]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[6]*19%>px 0;"><td><%=@vals[6]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Young</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Management Ability</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Developed</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[7]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[7]*19%>px 0;"><td><%=@vals[7]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Inconsistent</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Organisation Structure</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Simple</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[8]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[8]*19%>px 0;"><td><%=@vals[8]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Complex</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	<h4>Organizational Aspiration</h4>
+			<div class="row">
+			<div class="col-xs-3">Market Share</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Industry Leader</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[4]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[4]*19%>px 0;"><td><%=@vals[4]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Embryonic</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Innovation Index</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Inert</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[9]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[9]*19%>px 0;"><td><%=@vals[9]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Unrelenting</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Change Agenda</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Tactical</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[10]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[10]*19%>px 0;"><td><%=@vals[10]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Strategic</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Business Ambition</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Incremental</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[11]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[11]*19%>px 0;"><td><%=@vals[11]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Aggressive</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</div>

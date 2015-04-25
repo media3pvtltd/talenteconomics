@@ -1,0 +1,49 @@
+<section id="main_content">
+  <div class="container">
+  <div class="row add_bottom_30">
+  	<div class="col-md-12">
+      <h3>PROGRAM STRUCTURE</h3>
+      <p class="lead"></p>
+      </div>
+  </div>
+  <div class="row">
+      <!-- -------------------------------#Module 1 ------------------------>
+      <div class="col-md-4">
+        <div class="media">
+              <h4 class="media-heading"><code class='codemod'>Module - 1</code><a href="#">Pre-program</a> <span class="label label-warning">(up to 4 weeks - virtual)</span></h4>
+              <div class="media-body" style="padding-top: 20px;">
+                 <%unless @program_structure.nil? %>
+                     <%=raw @program_structure.content_for("Pre-program") %>   
+                 <%end %>
+           </div>
+        </div>      
+      </div>
+      <!-- -------------------------------#Module 2 ------------------------>
+      <div class="col-md-8" style="border-left:1px solid #e3e3e3;margin-bottom: 13px;">
+        <div class="row">
+          <div class="col-xs-12"><h4 class="media-heading"><code class='codemod'>Module - 2</code><a href="#">Strategy & Talent Economics</a> <span class="label label-warning">(3 days – face to face)﻿</span></h4><br></div>
+        </div>
+        <%unless @program_structure.nil? %>
+            <%=raw @program_structure.content_for("Strategy Talent Economics") %>   
+        <%end %>
+      </div>
+      <!-- -------------------------------#Module 3 ------------------------>
+      <div class="col-md-8">
+        <div class="media">
+              <h4 class="media-heading"><code class='codemod'>Module - 3</code><a href="#">Analysis and Strategy Formulation</a> <span class="label label-warning">(4 weeks of application support - virtual)</span></h4>
+              <div class="media-body" style="padding-top: 14px;">
+                <%unless @program_structure.nil? %>
+                    <%=raw @program_structure.content_for("Analysis and Strategy formulation") %>   
+                <%end %>     
+           </div>
+        </div>
+      </div>
+  </div><!-- End row -->
+  <div class="row">
+    <div class="col-xs-12" style="margin-top:27px;color:#434343">
+      <p><b>Once certified all participants receive a dedicated profile page on the www.TalentEconomics.com website & password controlled access to an extensive database of global talent data, proprietary research papers, demographic trends and online tools for talent strategy formulation.
+      </b></p>
+    </div>
+  </div>
+  </div><!-- End container -->
+</section><!-- End main_content -->

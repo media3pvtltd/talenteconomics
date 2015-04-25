@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      bte_galleries:
+        title: Bte Galleries
+    bte_galleries:
+      admin:
+        bte_galleries:
+          actions:
+            create_new: Add New Bte Gallery
+            reorder: Reorder Bte Galleries
+            reorder_done: Done Reordering Bte Galleries
+          records:
+            title: Bte Galleries
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Bte Galleries yet. Click "Add New Bte Gallery" to add your first bte gallery.
+          bte_gallery:
+            view_live_html: View this bte gallery live <br/><em>(opens in a new window)</em>
+            edit: Edit this bte gallery
+            delete: Remove this bte gallery forever
+      bte_galleries:
+        show:
+          other: Other Bte Galleries
+  activerecord:
+    attributes:
+      'refinery/bte_galleries/bte_gallery':
+        photo: Photo
+        caption: Caption

@@ -1,0 +1,104 @@
+<!-- Toggle Switch -->
+	<%= stylesheet_link_tag    "jquery-switch", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "aero", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "wymeditor_compact.css", media: "all", "data-turbolinks-track" => true %>
+	<style>
+	.video{
+		margin-top:0px !important;
+	}
+	</style>
+<section id="wizard_bg">
+<div class="container">
+<!-- Start Survey container -->
+<div id="survey_container">
+	<div id="top-wizard">
+		<h4>Settings</h4>
+	</div><!-- end top-wizard -->
+    
+	<div id="middle-wizard">
+		<div class="step">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="box_style_1">
+						<ul class="submenu-col">
+							<li><%= link_to "Research Database",refresearches_path  %></li>
+							<li><%= link_to "Benchmarking Database",benchmarking_path  %></li>
+							<li><%= link_to "Update Profile",changedetails_path, :id => 'active' %></li>
+							<li><%= link_to "Change Password",changepwd_path%></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-8">
+					<%unless @details.nil? %>
+						<%=form_for @details, url: request.original_url, :method => 'put' do |f|%>
+						<div class="row">
+							<div class="col-xs-12">
+								<%= f.label :name, "Name" %>
+								<%= f.text_field :name, :class => 'form-control' %>	
+							</div>
+							<div class="col-xs-6">
+								<%= f.label :location, "Location" %>
+								<%= f.text_field :location, :class => 'form-control' %>
+							</div>
+							<div class="col-xs-6">
+								<%= f.label :google_profile, "Google Profile" %>
+								<%= f.text_field :google_profile, :class => 'form-control' %>
+							</div>
+							<div class="col-xs-6">
+								<%= f.label :facebook_profile, "Facebook Profile" %>
+								<%= f.text_field :facebook_profile, :class => 'form-control' %>
+							</div>
+							<div class="col-xs-6">
+								<%= f.label :linkedin_profile, "Linkedin Profile" %>
+								<%= f.text_field :linkedin_profile, :class => 'form-control' %>
+							</div>
+							<div class="col-xs-12" style="margin-bottom:20px">
+								<%= f.label :content, "Profile Bio" %>
+								<%= f.text_area :content, :class => 'wymeditor form-control' %>
+							</div>
+						</div>
+						<%= f.submit "Update Details", :class => 'btn btn-info wymupdate' %>
+						<%end %>
+					<%end %>
+				</div>
+			</div><!-- end row -->
+		 </div><!-- end step-->
+    </div><!-- end middle-wizard -->
+    
+	<div id="bottom-wizard">
+		
+	</div><!-- end bottom-wizard -->
+    
+</div><!-- end Survey container -->
+
+</div>
+</section><!-- end section main container -->
+
+
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<%= javascript_include_tag 'jquery-ui-1.8.12.min.js', "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wizard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.icheck.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "wizard_func.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions.js", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "classie.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "modernizr.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wymeditor.js", "data-turbolinks-track" => true %>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.wymeditor').wymeditor({
+        skin: 'compact'
+    });
+});
+</script>
+

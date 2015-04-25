@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Bte Testimonial
+            reorder: Réordonner les Bte Testimonials
+            reorder_done: Fin de réordonnancement des Bte Testimonials
+          records:
+            title: Bte Testimonials
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Bte Testimonial. Cliquer sur "Créer un(e) nouve(au/l/lle) Bte Testimonial" pour créer votre premi(er/ère) bte testimonial.'
+          bte_testimonial:
+            view_live_html: Voir ce(t/tte) bte testimonial <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) bte testimonial
+            delete: Supprimer définitivement ce(t/tte) bte testimonial
+      bte_testimonials:
+        show:
+          other: Autres Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

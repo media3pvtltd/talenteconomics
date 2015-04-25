@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Lag en ny Research
+            reorder: Endre rekkefølgen på Researches
+            reorder_done: Ferdig å endre rekkefølgen Researches
+          records:
+            title: Researches
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Researches enda. Klikk på "Lag en ny Research" for å legge til din første research.
+          research:
+            view_live_html: Vis hvordan denne research ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne research
+            delete: Fjern denne research permanent
+      researches:
+        show:
+          other: Andre Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

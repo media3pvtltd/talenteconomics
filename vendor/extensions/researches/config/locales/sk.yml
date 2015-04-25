@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Pridať Research
+            reorder: Preusporiadať Researches
+            reorder_done: Koniec radenia Researches
+          records:
+            title: Researches
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Researches. Kliknite na "Pridať Research" pre pridanie prvého research.
+          research:
+            view_live_html: Zobraziť náhľad research<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť research
+            delete: Zmazať research
+      researches:
+        show:
+          other: Daľšie Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

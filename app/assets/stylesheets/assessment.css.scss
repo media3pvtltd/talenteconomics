@@ -1,0 +1,18 @@
+// Place all the styles related to the assessment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.terms{
+	padding: 8px 5px;
+	background: #7cc9ea;
+	border: 1px solid #e3e3e3;
+	border-radius: 8px;
+}
+
+ h3,h4{color: #428bca;}
+
+.values {margin-top:10px}
+.values table{margin-top:-7px;margin-bottom:0px;background:#A4D2E7;border-radius: 5px;}
+.values table td{border-top:0px !important;}
+.values table .active{border: 0px;border-radius: 36px;}
+
+.assessment_val .row{margin-bottom:15px;}

@@ -1,0 +1,28 @@
+tr:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Yeni Ekle Bte Testimonial
+            reorder: Tekrar sirala Bte Testimonials
+            reorder_done: Tekrar siralama tamamlandiBte Testimonials
+          records:
+            title: Bte Testimonials
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Bte Testimonials yok henuz.  Tikla "Yeni Ekle Bte Testimonial" eklemek senin ilk bte testimonial.
+          bte_testimonial:
+            view_live_html: Bunu canlu bte testimonial goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle bte testimonial
+            delete: Bunu Sil bte testimonial sonsuza dek
+      bte_testimonials:
+        show:
+          other: Diger Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

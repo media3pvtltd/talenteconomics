@@ -1,0 +1,2 @@
+module WickedHelper
+end

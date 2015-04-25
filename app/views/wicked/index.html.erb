@@ -1,0 +1,422 @@
+<%@vals = [] %>
+<%@myarr = params["parseit"].split('=') %>
+<%@myarr.each do |v| %>
+	<%if v.to_i == v.to_f %>
+		<%@vals << v.to_i %>
+	<% else %>
+		<% @vals << v.to_f %>
+	<%end %>
+<%end %>
+<% @user = Survey.find(params[:user].split("=")[1].to_i) %>
+<div class="container" style="height:80%">
+	<p style="padding-top:35px">Thank you for visiting our website and completing a PeopleLENS survey for your organisation. The chart below
+	indicates how your organisation scored on the 11 PeopleLENS variables. Looking at all 11 together will help you
+	illustrate and objectively weigh your competing talent priorities. In aggregate, the variables help you establish
+	three distinct lenses with which to study your organisations talent needs. These are -
+	</p>
+	<p class="text-center"><img src="<%=root_url %>/assets/lenses.png" alt="" style='height:460px'></p>
+	<p>All three lenses complete for focus and investment, and as you diagnose your way through them, your talent priorities emerge.</p>
+	<p style="margin-bottom:180px">Lets see how you scored -</p>
+</div>
+
+<div class="container assessment_val" style="height:80%">
+	<div class="well" style="margin-top:16px">
+		<div class="row" style="margin-bottom:0px">
+			<div class="col-xs-6">
+				<div><strong>Organization</strong>:: <%= @user.organization %></div>
+				<%@userrole = "" %>
+				<%@userind = "" %>
+				<%@userregion = "" %>
+				<%Answer::ROLE.each {|k| @userrole = k[0] if k[1] == @user.role } %>
+				<%Answer::IND.each {|k| @userind = k[0] if k[1] == @user.industry } %>
+				<%Answer::REG.each {|k| @userregion = k[0] if k[1] == @user.region } %>
+				<div><strong>Accessed by</strong>:: <%=@userrole %></div>
+			</div>
+			<div class="col-xs-6">
+				<div><strong>Industry</strong>:: <%=@userind %></div>
+				<div><strong>Region</strong>:: <%=@userregion %></div>
+			</div>
+		</div>
+	</div>
+	<h4>Market Maturity</h4>
+		<div class="row">
+			<div class="col-xs-3 colcenter">Market Opportunity</div>
+			<div class="col-xs-9 values">
+				<table class="mytable">
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Developed</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[1]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[1]*19%>px 0;"><td><%=@vals[1]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Emerging</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Market Talent Pipeline</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Abundant</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[2]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[2]*19%>px 0;"><td><%=@vals[2]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Scarce</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Pipeline Proficiency</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Ready Skills</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[3]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[3]*19%>px 0;"><td><%=@vals[3]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Ready Potential</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	<h4>Organizational Readiness</h4>
+			<div class="row">
+			<div class="col-xs-3">Talent Attraction</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Employer of choice</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[5]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[5]*19%>px 0;"><td><%=@vals[5]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Challenging</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Employee Vintage</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Tenured</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[6]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[6]*19%>px 0;"><td><%=@vals[6]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Young</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Management Ability</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Developed</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[7]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[7]*19%>px 0;"><td><%=@vals[7]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Inconsistent</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Organisation Structure</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Simple</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[8]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[8]*19%>px 0;"><td><%=@vals[8]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Complex</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	<h4>Organizational Aspiration</h4>
+			<div class="row">
+			<div class="col-xs-3">Market Share</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Industry Leader</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[4]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[4]*19%>px 0;"><td><%=@vals[4]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Embryonic</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Innovation Index</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Inert</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[9]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[9]*19%>px 0;"><td><%=@vals[9]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Unrelenting</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Change Agenda</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Tactical</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[10]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[10]*19%>px 0;"><td><%=@vals[10]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;" >Strategic</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Business Ambition</div>
+			<div class="col-xs-9 values">
+				<table class="mytable" >
+					<tbody>
+						<tr class="target">
+							<td style="width:25%;text-align:left;">Incremental</td>
+							<td>
+								<table class="relate tabledown">
+									<tr>
+										<%(1..10).each do |v| %>
+											<td><%= v %></td>
+										<%end %>
+									</tr>
+									<tr class="round" style="left:<%=(@vals[11]*10) - 5 %>%;background-image:url('<%=root_url %>assets/result_gradient.png');background-position:-<%= @vals[11]*19%>px 0;"><td><%=@vals[11]%></td></tr>
+								</table>
+							</td>
+							<td style="width:25%;text-align:right;">Aggressive</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</div>
+
+
+
+
+
+<div class="container" style="height:80%;margin-top:160px;">
+	<h3>Using the PeopleLENS ©</h3>
+	<h4>Analysis</h4>
+	<p>The table above is a heatmap of your talent priorities. The closer you go to red, the greater correlation between talent investment and business success. In other words, variables which scored 6 or higher fall within your investment zone. They represent areas where talent investments will generate the best "value for effort” and maximum business impact. Your talent strategy should address these areas directly.</p>
+	<p>In a globally dispersed business, your PeopleLENS assessment may look different in each location. Different cities or countries may have different talent needs. It is recommended that you do a similar assessment for each location key to your business. As you compare results, common themes and differences will begin to stand out.</p>
+	<h4>Solutions</h4>
+	<p>The next step is to craft the solutions and initiatives that will form the backbone of your talent strategy. There are four interests we must consider within this overall strategy. These are -</p>
+	<ol>
+		<li>The Needs of the Individual – Initiatives aimed at helping people do their job better. These bring about improvements in personal capability and represent immediate investments needed in talent acquisition or development</li>
+		<li>The Needs of the Group – Solutions which facilitate better interpersonal work or build a positive culture within the organisation. These are your Organisation Development investments</li>
+		<li>Short Term Needs – Immediate outcomes which must be achieved within the next 6-12 months. These help fix a problem, address a bottleneck or help an organisation deal with current change.</li>
+		<li>Long Term Needs - Focus areas for future success. Ranging from 1 to 5 years into the future, these are outcomes which are still on the horizon but need to be invested in today.</li>
+	</ol>
+	<p>The simple planning matrix below helps us manage this polarity of time and focus. I call it the P.I.T.A. Model.</p>
+</div>
+
+
+
+
+<div class="container" style="height:80%;margin-top:140px">
+	<h3>PeopleLENS Strategy – Using The PITA Framework</h3>
+	<p class="text-center"><img src=" <%=root_url %>/assets/4quadrants.png " alt="" style='height:350px'></p>
+	<p>The PITA approach helps you clarify the exact recipe on initiatives which make up your talent strategy. Each quadrant represents a specific type of talent strategy solution, and the exact recipe of solutions we pick is based wholly on the outcomes of diagnosis. But first let’s understand each quadrant.</p>
+	<h4>Professional Investments</h4>
+	<p>Professional imperatives help ensure an organisation’s workforce stays current and competent. These are investments made in today’s performance.</p>
+	<p>Some common examples include -</p>
+</div>
+
+
+
+<div class="container" style="height:80%">
+	<ul>
+		<li>Investments in attracting and hiring the right talent into open roles</li>
+		<li>Assessments (including job assessments, 360° surveys and psychometric assessments)</li>
+		<li>Onboarding and transition support for new talent</li>
+		<li>Training programs aimed at skilling a workforce for their current job</li>
+		<li>On the job learning</li>
+		<li>Skills development programs for managers and leaders</li>
+		<li>Executive coaching</li>
+		<li>Formal (or informal) performance feedback and coaching</li>
+		<li>Conference attendance and trade body memberships</li>
+		<li>Communities of practice and other forms of distributed learning</li>
+	</ul>
+	<h3>Aspirational Investments</h3>
+	<p>Aspirational Investments help prepare an organisation’s workforce for the future. Either by developing people for future roles or by introducing new capabilities. These are investments made in tomorrow’s needs.</p>
+	<p>A few examples are –</p>
+	<ul>
+		<li>Campus hiring programs</li>
+		<li>Internships (including mid career and “returnship”) programs</li>
+		<li>Assessment and development centres</li>
+		<li>Job rotation arrangements</li>
+		<li>Short-term or long-term developmental assignments</li>
+		<li>HiPo (High Potential) programs for identified talent</li>
+		<li>Developmental tasks or projects</li>
+		<li>External education sponsorships</li>
+		<li>Mentoring and job shadowing arrangements</li>
+		<li>Business turnaround experiences</li>
+	</ul>
+	<h3>Interventional Investments</h3>
+	<p>Interventions focus on fixing a problem or addressing an immediate collective need. They tend to be short, sharp projects with a well defined outcome, supported by distinct sponsors, with a defined budget and audience.</p>
+</div>
+
+
+
+<div class="container" style="height:80%">
+	<p>Some examples include-</p>
+	<ul>
+		<li>Teambuilding programs</li>
+		<li>Assimilation investments ( to support new leaders or new teams)</li>
+		<li>T-group and cross cultural sensitivity programs</li>
+		<li>Quality circles or Six Sigma projects</li>
+		<li>Team coaching</li>
+		<li>Change management projects</li>
+		<li>Investments in cross functional collaboration</li>
+		<li>Investments in leadership team development</li>
+	</ul>
+	<h3>Transformational Investments</h3>
+	<p>Transformations are long term and focus on the culture an organisation wants to build in the future. They help the organisation manage its evolution. Transformational investments are critically important when your company has aggressive growth plans, or is facing impending change - like a merger or acquisition. They are also critical for businesses which operate in <br><br><br>evolving markets.</p>
+	<p>Some common transformational strategies include –</p>
+	<ul>
+		<li>Culture building initiatives</li>
+		<li>Visioning workshops</li>
+		<li>Business turnaround projects</li>
+		<li>Cultural assimilation following mergers or acquisitions</li>
+		<li>Immersion programs for new leaders or new locations</li>
+		<li>Industry task forces</li>
+		<li>Internal social media development</li>
+		<li>Investments in strengthening leader led “communicable behaviour” like role modelling or story telling.</li>
+	</ul>
+	<h3>If all you had was a $100, how would you spend it?</h3>
+	<p>Every organisation has a distinct PITA recipe. And a large diversified business may even have a different recipe for each key location.</p>
+</div>
+
+
+
+<div class="container" style="height:80%">
+	<p>As yourself - if you had 100 dollars (or for that matter 100 units of focus or energy) to invest, where would you put it?</p>
+	<p>The answer lies in diagnosis. Go back to your 11 variables. Which ones fell into the investment zone? Overlay that understanding onto the PITA model. What solutions would help you make the best use of your precious dollars?</p>
+	<p>If you had high scores in pipeline proficiency, management ability employee vintage, or innovation, check if there are professional investment plays that would help you. If your market talent pipeline is weak, or you had high priorities on talent attraction or business ambition - aspirational investments may help you grow your talent in line with business growth. For complex organisation structures, inconsistent management or an aggressive change agenda, think of the interventions which may help you. Finally, if you operate in an underdeveloped market, are targeting aggressive growth or are currently subscale in revenue; you will need to fund your long term transformational agenda to steer your organisation in the right direction. At the end, the quality of your strategy will depend direct on the quality of debate within your leadership team. It is this debate which helps your organisation arrive at the best set of solutions.</p>
+	<p>Whether your budget is a $100 or $100 Million, the process is the same. In large companies you may need a talent strategy for each major pocket of operation. (The first principle of strategy laid out in the Talent Economics book is <span class='strong'>“Talent Strategy must start with deep diagnosis and respect contextual differences”</span>). If the context differs, the outcomes of diagnosis will too. Eventually, we want to bridge the gap between your needs and your investments. Using the PITA <br><br><br>framework ensures that the connection between your priorities and actions are clear.</p>
+	<p>Next steps -</p>
+	<ol>
+		<li>Take the diagnosis back to the organisation and structure a debate focussed on the solutions which will eventually form the backbone of talent strategy.</li>
+		<li>Pick no more than 8 to 10 key initiatives to form your talent strategy. Allocate budgets to these strategic choices. If required analyse where the company is currently investing discretionary money and pull the plug on nice to haves. Redirect this money to strategic programs.</li>
+		<li>Communicate talent strategy broadly. Keep it simple and easy to remember. Get business leaders involved in executing talent strategy. Form cross functional groups, talent councils, and equip them with the focus, incentive and resources to succeed.</li>
+	</ol>
+</div>
+
+
+
+<div class="container" style="height:80%">
+	<ol>
+		<li>Review progress on a quarterly basis. Review the strategy once a year. If required, diagnose deeper at each iteration.</li>
+		<li>Celebrate each milestone and recognise those that have contributed. Remember, strategic success depends more on momentum, culture and involvement, than it does on money or intellect.</li>
+	</ol>
+	<p>Good luck!</p>
+	<h3>About PeopleLENS Global Associates (PLGA)</h3>
+	<p>PLGA is an open source association of ‘Certified Talent Economists’. This is a group of internal and external consultants who are expert practioners of the PeopleLENS framework. The group helps forward a common agenda of deep diagnosis, and commercial talent strategy across a broad group of clients and industries. Spread all across the world, PeopleLENS associates help companies improve their talent management practices and coach leaders on talent strategy. As a community, we also help each other deepen a shared understanding of global talent trends.</p>
+	<p>PLGA runs regular <i>Certified Talent Economist</i> programs across the world. You can find a schedule of upcoming programs, as well as the program requirements and benefits at <a href="http://www.PLGAonline.com">www.PLGAonline.com</a>.</p>
+</div>

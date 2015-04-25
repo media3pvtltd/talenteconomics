@@ -1,0 +1,36 @@
+it:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Aggiungi Nuovo Profile
+            reorder: Riordina Profiles
+            reorder_done: Termina il Riordino di Profiles
+          records:
+            title: Profiles
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Profiles. Clicca "Aggiungi Nuovo Profile" per aggiungere il tuo primo profile.
+          profile:
+            view_live_html: Guarda live questo profile <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo profile
+            delete: Rimuovi per sempre questo profile
+      profiles:
+        show:
+          other: Altri Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        name: Name
+        location: Location
+        certification_date: Certification Date
+        email: Email
+        content: Content
+        picture: Picture
+        google_profile: Google Profile
+        facebook_profile: Facebook Profile
+        twitter_profile: Twitter Profile
+        linkedin_profile: Linkedin Profile

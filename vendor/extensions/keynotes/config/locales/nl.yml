@@ -1,0 +1,31 @@
+nl:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: Nieuwe Keynote toevoegen
+            reorder: De volgorde van de Keynotes wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Keynote-volgorde
+          records:
+            title: Keynotes
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Keynotes. Druk op 'Nieuwe Keynote toevoegen' om de eerste toe te voegen.
+          keynote:
+            view_live_html: Deze keynote op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze keynote
+            delete: Deze keynote definitief verwijderen
+      keynotes:
+        show:
+          other: Andere Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

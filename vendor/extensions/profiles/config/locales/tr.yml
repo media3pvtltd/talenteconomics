@@ -1,0 +1,36 @@
+tr:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Yeni Ekle Profile
+            reorder: Tekrar sirala Profiles
+            reorder_done: Tekrar siralama tamamlandiProfiles
+          records:
+            title: Profiles
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Profiles yok henuz.  Tikla "Yeni Ekle Profile" eklemek senin ilk profile.
+          profile:
+            view_live_html: Bunu canlu profile goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle profile
+            delete: Bunu Sil profile sonsuza dek
+      profiles:
+        show:
+          other: Diger Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        name: Name
+        location: Location
+        certification_date: Certification Date
+        email: Email
+        content: Content
+        picture: Picture
+        google_profile: Google Profile
+        facebook_profile: Facebook Profile
+        twitter_profile: Twitter Profile
+        linkedin_profile: Linkedin Profile

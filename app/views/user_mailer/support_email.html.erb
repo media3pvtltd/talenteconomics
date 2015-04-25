@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <ul>
+    	<li>
+    		User name :: <%= @user["first_name"] %> <%= @user["last_name"] %>
+    	</li>
+    	<li>
+    		Email :: <%= @user["email"] %>
+    	</li>
+    	<li>
+    		Phone Number :: <%= @user["phone"] %>
+    	</li>
+    	<li>
+    		<p>Query :: <%= @user["content"] %></p>
+    	</li>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,36 @@
+nl:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Nieuwe Profile toevoegen
+            reorder: De volgorde van de Profiles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Profile-volgorde
+          records:
+            title: Profiles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Profiles. Druk op 'Nieuwe Profile toevoegen' om de eerste toe te voegen.
+          profile:
+            view_live_html: Deze profile op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze profile
+            delete: Deze profile definitief verwijderen
+      profiles:
+        show:
+          other: Andere Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        name: Name
+        location: Location
+        certification_date: Certification Date
+        email: Email
+        content: Content
+        picture: Picture
+        google_profile: Google Profile
+        facebook_profile: Facebook Profile
+        twitter_profile: Twitter Profile
+        linkedin_profile: Linkedin Profile

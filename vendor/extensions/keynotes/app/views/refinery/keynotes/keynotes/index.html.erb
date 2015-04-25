@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="keynotes">
+    <% @keynotes.each do |keynote| %>
+      <li>
+        <%= link_to keynote.title, refinery.keynotes_keynote_path(keynote) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,148 @@
+<!-- Toggle Switch -->
+	<%= stylesheet_link_tag    "jquery-switch", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "aero", media: "all", "data-turbolinks-track" => true %>
+
+
+<section id="sub-header">
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 text-center">
+			<%=search_form_for @search, :id => 'search-form' do |f| %>
+                <div class="input-group">
+                <!-- <input type="text" placeholder="Search Drugs....autocomplete Ajax" name="autocomplete-ajax" id="autocomplete-ajax" class="form-control style-2" autocomplete="off"> -->
+                 <%= f.search_field :title_cont, :class => 'form-control style-2', :id => 'autocomplete-ajax' %>
+                <span class="input-group-btn">
+                  <button class="btn" type="submit"><i class="icon-search"></i></button>
+                </span>
+                </div>
+                <div class="adv_search"><a href="#">Advanced search</a></div>
+            <%end %>
+        </div>
+	</div><!-- End row -->
+</div><!-- End container -->
+<div class="divider_top"></div>
+</section>
+
+<section id="main_content_gray">
+	<div class="container">
+    	<div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Research Database</h2>
+            <p></p>
+        </div>
+    </div><!-- End row -->
+    
+    <div class="row">
+    	<div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-item">
+                <div class="photo">
+                    <div class="cat_row"><a href="#">Primary Research Papers</a></div>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="course_info col-md-12 col-sm-12">
+                            <ul class="list_3">
+			                  <%@primary.each do |file| %>
+			                  <li><a href="<%= getfilepath file.file_id unless file.file_id.nil? %>" target='_blank'><%=file.title %></a></li>
+			                  <%end %>
+		             		</ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-item">
+                <div class="photo">
+                    <div class="cat_row"><a href="#">Macro Talent Economics Data Sources</a></div>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="course_info col-md-12 col-sm-12">
+                        	<ul class="list_2">
+                              <%@datasources.each do |link| %>
+                              <li><a href="<%=link.link %>" target='_blank'><%=link.title %></a></li>
+                              <%end %>
+                         	</ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-item">
+                <div class="photo">
+                    <div class="cat_row"><a href="#">Talent Economics Resources and Formats</a></div>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="course_info col-md-12 col-sm-12">
+                            <ul class="list_3">
+                              <%@formats.each do |link| %>
+                              <li><a href="<%=link.link %>" target='_blank'><%=link.title %></a></li>
+                              <%end %>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-item">
+                <div class="photo">
+                    <div class="cat_row"><a href="#">External Research Papers and links</a></div>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="course_info col-md-12 col-sm-12">
+                            <ul class="list_3">
+                              <%@papers.each do |link| %>
+                              <li><a href="<%=link.link %>" target='_blank'><%=link.title %></a></li>
+                              <%end %>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div><!-- End row -->
+            
+   </div><!-- End container -->
+</section>
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'sdfadsfdasf', "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wizard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.icheck.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.autocomplete", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "wizard_func.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions.js", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "classie.js", "data-turbolinks-track" => true %>
+
+<script>
+ $('#autocomplete-ajax').autocomplete({
+    serviceUrl: '/assessment/autocomplete',
+    onSelect: function (suggestions) {
+        console.log(suggestions.data)
+    },
+    onSearchComplete: function(query, suggestions){
+      console.log("testing");
+      console.log(query);
+      console.log(suggestions);
+    }
+});
+</script>

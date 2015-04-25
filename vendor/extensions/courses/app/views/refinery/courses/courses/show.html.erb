@@ -1,0 +1,61 @@
+<% content_for :body_content_title do %>
+  <%= @course.place %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Place</h1>
+    <p>
+      <%=raw @course.place %>
+    </p>
+  </section>
+  <section>
+    <h1>Country</h1>
+    <p>
+      <%=raw @course.country %>
+    </p>
+  </section>
+  <section>
+    <h1>Held On</h1>
+    <p>
+      <%=raw @course.held_on %>
+    </p>
+  </section>
+  <section>
+    <h1>Held Upto</h1>
+    <p>
+      <%=raw @course.held_upto %>
+    </p>
+  </section>
+  <section>
+    <h1>Brochure</h1>
+    <p>
+      <% if @course.brochure.present? %>
+        <%= link_to 'brochure', @course.brochure.url %>
+      <% else %>
+        brochure
+      <% end %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @course.photo, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="courses">
+      <% @courses.each do |course| %>
+        <li>
+          <%= link_to course.place, refinery.courses_course_path(course) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

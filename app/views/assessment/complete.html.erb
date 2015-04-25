@@ -1,0 +1,52 @@
+<!-- Toggle Switch -->
+	<%= stylesheet_link_tag    "jquery-switch", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "aero", media: "all", "data-turbolinks-track" => true %>
+
+
+<section id="wizard_bg">
+<div class="container">
+<!-- Start Survey container -->
+<div id="survey_container">
+	
+	<div id="top-wizard">
+		Your Report
+	</div><!-- end top-wizard -->
+    
+	<div id="middle-wizard">
+		<div class="step">
+			<div class="row">
+				<p>Thank you for completing the PeopleLENS Assessment. Your report has been emailed to: <%=params[:url] %></p>
+               	<p>Please note, this is a complimentary (non benchmarked) version of the PeopleLENS assessment. Only Certified PeopleLENS Associates have access to our benchmarking database, and can assign bulk surveys for deeper diagnosis within organisations. If you plan to use this survey frequently, you might want to consider the <a href="<%=testme_path %>">benefits of certification</a>.</p>
+               	<p>You can also view the report below:</p>
+				<iframe src="/docs/<%=params[:name]%>.pdf" width="580px" height="640px"></iframe>
+			</div><!-- end row -->
+        </div><!-- end step-->
+    </div><!-- end middle-wizard -->
+    
+	<div id="bottom-wizard">
+		
+	</div><!-- end bottom-wizard -->
+    
+</div><!-- end Survey container -->
+
+</div>
+</section><!-- end section main container -->
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'jquery-ui-1.8.12.min.js', "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wizard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.icheck.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "wizard_func.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions.js", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "classie.js", "data-turbolinks-track" => true %>
+

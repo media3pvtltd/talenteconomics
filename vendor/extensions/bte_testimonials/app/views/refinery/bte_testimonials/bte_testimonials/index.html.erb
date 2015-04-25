@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="bte_testimonials">
+    <% @bte_testimonials.each do |bte_testimonial| %>
+      <li>
+        <%= link_to bte_testimonial.name, refinery.bte_testimonials_bte_testimonial_path(bte_testimonial) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

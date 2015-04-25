@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      bte_galleries:
+        title: Bte Galleries
+    bte_galleries:
+      admin:
+        bte_galleries:
+          actions:
+            create_new: Lag en ny Bte Gallery
+            reorder: Endre rekkefølgen på Bte Galleries
+            reorder_done: Ferdig å endre rekkefølgen Bte Galleries
+          records:
+            title: Bte Galleries
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Bte Galleries enda. Klikk på "Lag en ny Bte Gallery" for å legge til din første bte gallery.
+          bte_gallery:
+            view_live_html: Vis hvordan denne bte gallery ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne bte gallery
+            delete: Fjern denne bte gallery permanent
+      bte_galleries:
+        show:
+          other: Andre Bte Galleries
+  activerecord:
+    attributes:
+      'refinery/bte_galleries/bte_gallery':
+        photo: Photo
+        caption: Caption

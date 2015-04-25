@@ -1,0 +1,31 @@
+cs:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: Přidat Keynote
+            reorder: Řadit Keynotes
+            reorder_done: Konec řazení Keynotes
+          records:
+            title: Keynotes
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Keynotes. Zvolte "Přidat Keynote" pro přidání prvního keynote.
+          keynote:
+            view_live_html: Zobrazit náhled keynote<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit keynote
+            delete: Smazat keynote
+      keynotes:
+        show:
+          other: Další Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

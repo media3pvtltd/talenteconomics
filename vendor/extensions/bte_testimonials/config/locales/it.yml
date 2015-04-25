@@ -1,0 +1,28 @@
+it:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Aggiungi Nuovo Bte Testimonial
+            reorder: Riordina Bte Testimonials
+            reorder_done: Termina il Riordino di Bte Testimonials
+          records:
+            title: Bte Testimonials
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Bte Testimonials. Clicca "Aggiungi Nuovo Bte Testimonial" per aggiungere il tuo primo bte testimonial.
+          bte_testimonial:
+            view_live_html: Guarda live questo bte testimonial <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo bte testimonial
+            delete: Rimuovi per sempre questo bte testimonial
+      bte_testimonials:
+        show:
+          other: Altri Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @bte_gallery.caption %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @bte_gallery.photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Caption</h1>
+    <p>
+      <%=raw @bte_gallery.caption %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="bte_galleries">
+      <% @bte_galleries.each do |bte_gallery| %>
+        <li>
+          <%= link_to bte_gallery.caption, refinery.bte_galleries_bte_gallery_path(bte_gallery) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

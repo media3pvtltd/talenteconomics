@@ -1,0 +1,12 @@
+<section class="tp-banner-container">
+	<div class="tp-banner" >
+		<ul>
+			<%@banner.each do |b| %>
+			<li data-transition="fade" data-slotamount="4" data-masterspeed="1500">
+				<img src="<%=getpath(b['photo_id']) %>" alt="">
+			</li>
+			<%end %>
+		</ul>
+		<div class="tp-bannertimer"></div>
+	</div>
+</section><!-- End slider -->

@@ -1,0 +1,28 @@
+nl:
+  refinery:
+    plugins:
+      bte_galleries:
+        title: Bte Galleries
+    bte_galleries:
+      admin:
+        bte_galleries:
+          actions:
+            create_new: Nieuwe Bte Gallery toevoegen
+            reorder: De volgorde van de Bte Galleries wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Bte Gallery-volgorde
+          records:
+            title: Bte Galleries
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Bte Galleries. Druk op 'Nieuwe Bte Gallery toevoegen' om de eerste toe te voegen.
+          bte_gallery:
+            view_live_html: Deze bte gallery op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze bte gallery
+            delete: Deze bte gallery definitief verwijderen
+      bte_galleries:
+        show:
+          other: Andere Bte Galleries
+  activerecord:
+    attributes:
+      'refinery/bte_galleries/bte_gallery':
+        photo: Photo
+        caption: Caption

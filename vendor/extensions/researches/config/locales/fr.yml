@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Research
+            reorder: Réordonner les Researches
+            reorder_done: Fin de réordonnancement des Researches
+          records:
+            title: Researches
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Research. Cliquer sur "Créer un(e) nouve(au/l/lle) Research" pour créer votre premi(er/ère) research.'
+          research:
+            view_live_html: Voir ce(t/tte) research <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) research
+            delete: Supprimer définitivement ce(t/tte) research
+      researches:
+        show:
+          other: Autres Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

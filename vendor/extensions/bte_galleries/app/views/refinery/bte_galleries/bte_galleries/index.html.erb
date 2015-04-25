@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="bte_galleries">
+    <% @bte_galleries.each do |bte_gallery| %>
+      <li>
+        <%= link_to bte_gallery.caption, refinery.bte_galleries_bte_gallery_path(bte_gallery) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @keynote.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @keynote.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @keynote.content %>
+    </p>
+  </section>
+  <section>
+    <h1>Latitude</h1>
+    <p>
+      <%=raw @keynote.latitude %>
+    </p>
+  </section>
+  <section>
+    <h1>Longitude</h1>
+    <p>
+      <%=raw @keynote.longitude %>
+    </p>
+  </section>
+  <section>
+    <h1>Date</h1>
+    <p>
+      <%=raw @keynote.date %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="keynotes">
+      <% @keynotes.each do |keynote| %>
+        <li>
+          <%= link_to keynote.title, refinery.keynotes_keynote_path(keynote) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

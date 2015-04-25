@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="profiles">
+    <% @profiles.each do |profile| %>
+      <li>
+        <%= link_to profile.name, refinery.profiles_profile_path(profile) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

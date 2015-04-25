@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+#        article: masculino/femenino
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Crear nuevo bte testimonial
+            reorder: Reordenar bte testimonials
+            reorder_done: Reordenación de bte testimonials completada
+          records:
+            title: Bte Testimonials
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay bte testimonials todavía. Pulsa en "Crear nuevo Bte Testimonial" para crear tu primer bte testimonial.
+          bte_testimonial:
+            view_live_html: Ver este bte testimonial como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este bte testimonial
+            delete: Borrar este bte testimonial para siempre
+      bte_testimonials:
+        show:
+          other: Otros bte testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

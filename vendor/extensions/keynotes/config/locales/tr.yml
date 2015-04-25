@@ -1,0 +1,31 @@
+tr:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: Yeni Ekle Keynote
+            reorder: Tekrar sirala Keynotes
+            reorder_done: Tekrar siralama tamamlandiKeynotes
+          records:
+            title: Keynotes
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Keynotes yok henuz.  Tikla "Yeni Ekle Keynote" eklemek senin ilk keynote.
+          keynote:
+            view_live_html: Bunu canlu keynote goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle keynote
+            delete: Bunu Sil keynote sonsuza dek
+      keynotes:
+        show:
+          other: Diger Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

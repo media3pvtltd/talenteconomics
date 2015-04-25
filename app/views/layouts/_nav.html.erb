@@ -1,0 +1,36 @@
+<nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="mobnav-btn"></div>
+                <ul class="sf-menu">
+                    <li>
+                    <%= link_to "Home", root_url %>
+                    </li>
+                    <li>
+                    <%= link_to "About the Author", about_me_path %>  
+                    </li>
+                    <li>
+                    <%= link_to "Keynotes", keynotes_path%>  
+                    </li>
+                    <li>
+                    <%= link_to "Consulting", consulting_path %>  
+                    </li>
+                    <li class="normal_drop_down">
+                        <a href="#">Talent Economist Program</a>
+                        <div class="mobnav-subarrow"></div>
+                        <ul style="display: none;">
+                            <li><%= link_to "Become a Talent Economist", testme_path %></li>
+                            <li><%= link_to "Talent Economist Profiles", profiles_path %></li>
+                            <li><%= link_to "Certified Talent Economist Login", signin_path %></li>
+                        </ul>    
+                    </li>
+                    <li>
+                    <%= link_to "Articles and Blogs", blog_path %>  
+                    </li>
+                    <li><%= link_to "Take the peoplelens Assessment", assessment_path %></li>
+                </ul>
+            </div>
+        </div><!-- End row -->
+    </div><!-- End container -->
+</nav>

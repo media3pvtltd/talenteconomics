@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::BteGalleries::Admin::BteGalleriesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.bte_galleries_admin_bte_galleries_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_bte_galleries_admin_bte_gallery_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::BteGalleries::Admin::BteGalleriesController.sortable? && ::Refinery::BteGalleries::BteGallery.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Bte Galleries"),
+                 refinery.bte_galleries_admin_bte_galleries_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Bte Galleries"),
+                 refinery.bte_galleries_admin_bte_galleries_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

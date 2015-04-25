@@ -1,0 +1,55 @@
+<!-- Banner -->
+<%=render :partial => "home/slider" %>
+<!--Banner End -->
+<!-- About The Book -->
+<%=render :partial => "home/aboutthebook" %>
+<!--About the Book End -->
+<!-- Testimonials -->
+<%= render :partial => "home/testimonials" %>
+<!-- Testimonials End -->
+
+<!-- Latest Books -->
+<%= render :partial => "home/social" %>
+
+<!-- Buy the book -->
+<%= render :partial => "home/buythebook" %>
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<!-- jQuery REVOLUTION Slider  -->
+<%= javascript_include_tag "plugins/jquery.themepunch.plugins.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "plugins/jquery.themepunch.revolution.min.js", "data-turbolinks-track" => true %>
+<script type="text/javascript">
+
+        var revapi;
+
+        jQuery(document).ready(function() {
+
+               revapi = jQuery('.tp-banner').revolution(
+                {
+                    delay:9000,
+                    startwidth:1700,
+                    startheight:600,
+                    hideThumbs:true,
+                    navigationType:"none",
+                    fullWidth:"on",
+                    forceFullWidth:"on"
+                });
+
+        }); //ready
+
+</script>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "validate", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "classie", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "uisearch", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "googlemaps.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "mapmarker.js", "data-turbolinks-track" => true %>
+

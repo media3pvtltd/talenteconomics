@@ -1,0 +1,45 @@
+<%= form_for [refinery, :keynotes_admin, @keynote] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @keynote,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:content],
+                :object => "keynotes/keynote" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :latitude -%>
+    <%= f.text_field :latitude -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :longitude -%>
+    <%= f.text_field :longitude -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :date -%>
+    <%= f.datetime_select :date -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.keynotes.admin.keynotes.keynote'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @keynote.title) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

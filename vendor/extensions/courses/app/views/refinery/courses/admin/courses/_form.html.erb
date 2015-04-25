@@ -1,0 +1,47 @@
+<%= form_for [refinery, :courses_admin, @course] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @course,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :place -%>
+    <%= f.text_field :place, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :country -%>
+    <%= f.text_field :country -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :held_on -%>
+    <%= f.datetime_select :held_on -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :held_upto -%>
+    <%= f.datetime_select :held_upto -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :brochure -%>
+    <%= render '/refinery/admin/resource_picker',
+               :f => f,
+               :field => :brochure_id,
+               :resource => @course.brochure -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @course.photo,
+               :toggle_image_display => false -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.courses.admin.courses.course'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @course.place) -%>
+<% end -%>

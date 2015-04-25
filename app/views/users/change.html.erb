@@ -1,0 +1,87 @@
+<!-- Toggle Switch -->
+	<%= stylesheet_link_tag    "jquery-switch", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "aero", media: "all", "data-turbolinks-track" => true %>
+
+<section id="wizard_bg">
+<div class="container">
+<!-- Start Survey container -->
+<div id="survey_container">
+	<div id="top-wizard">
+		<h4>Settings</h4>
+	</div><!-- end top-wizard -->
+    
+	<div id="middle-wizard">
+		<div class="step">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="box_style_1">
+						<ul class="submenu-col">
+							<li><%= link_to "Research Database",refresearches_path  %></li>
+							<li><%= link_to "Benchmarking Database",benchmarking_path  %></li>
+							<li><%= link_to "Update Profile",changedetails_path %></li>
+							<li><%= link_to "Change Password",changepwd_path, :id => 'active' %></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-8">
+					<%=form_for @changeme, url: request.original_url, :html => {:id => 'target'} do |f|%>
+					<div class="row">
+						<div class="col-xs-12">
+								<input autocomplete="off" class="password form-control" id="change_password_current_password" name="change_password[current_password]" placeholder="Current Password" size="30" type="password"  required>
+						</div>
+						<div class="col-xs-6">
+							<input autocomplete="off" id="change_password_password" name="change_password[password]" placeholder="New Password" size="30" type="password" class="form-control" required>
+						</div>
+						<div class="col-xs-6">
+							<input autocomplete="off" id="change_password_password_confirmation" name="change_password[password_confirmation]" placeholder="Confirm New Password" size="30" type="password" class="form-control" required>
+						</div>
+					</div>
+					<%= f.submit "Change Password", :class => 'btn btn-info' %>
+					<%end %>
+				</div>
+			</div><!-- end row -->
+		 </div><!-- end step-->
+    </div><!-- end middle-wizard -->
+    
+	<div id="bottom-wizard">
+		
+	</div><!-- end bottom-wizard -->
+    
+</div><!-- end Survey container -->
+
+</div>
+</section><!-- end section main container -->
+
+
+<%= javascript_include_tag "jquery-1.10.2.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'jquery-ui-1.8.12.min.js', "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.wizard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.icheck.js", "data-turbolinks-track" => true %>
+
+<!-- OTHER JS --> 
+<%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "retina.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "validate.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.placeholder.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "wizard_func.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "functions.js", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "classie.js", "data-turbolinks-track" => true %>
+
+<script>
+function testing()	{
+ 
+}
+
+$("#target" ).submit(function( event ) {
+  password = $('#change_password_password').val();
+  conf = $('#change_password_password_confirmation').val();
+  if(password == conf){
+  }else{
+ 	alert("Please check confirmation password");
+ 	event.preventDefault();
+  }
+});
+</script>

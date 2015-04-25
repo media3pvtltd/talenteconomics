@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  place: MyString
+  'on': 2014-10-08
+
+two:
+  title: MyString
+  place: MyString
+  'on': 2014-10-08

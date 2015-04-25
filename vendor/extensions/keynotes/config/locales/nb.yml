@@ -1,0 +1,31 @@
+nb:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: Lag en ny Keynote
+            reorder: Endre rekkefølgen på Keynotes
+            reorder_done: Ferdig å endre rekkefølgen Keynotes
+          records:
+            title: Keynotes
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Keynotes enda. Klikk på "Lag en ny Keynote" for å legge til din første keynote.
+          keynote:
+            view_live_html: Vis hvordan denne keynote ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne keynote
+            delete: Fjern denne keynote permanent
+      keynotes:
+        show:
+          other: Andre Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

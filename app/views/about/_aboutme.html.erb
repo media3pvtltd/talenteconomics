@@ -1,0 +1,41 @@
+<section id="main_content">
+
+<div class="container">
+   <div class="row">
+      <aside class="col-md-4">
+      <div class=" box_style_1 profile">
+      <p class="text-center">
+      <%=image_tag "people/gyan.jpg", :class => "img-circle styled" %>
+      </p>
+              <ul class="social_teacher">
+                    <li><a href="https://www.facebook.com/talentguru" target="_blank" ><i class="icon-facebook"></i></a></li>
+                    <li><a href="https://www.twitter.com/gyannagpal" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://in.linkedin.com/in/peoplestrategy" target="_blank"><i class=" icon-linkedin"></i></a></li>
+              </ul>   
+              <ul>
+              <li style="text-align:center">
+                <a href="http://localhost:3000/" class="button_top hidden-xs" id="apply">Contact us</a>
+              </li>
+              </ul>
+              
+      </div><!-- End box-sidebar -->
+     </aside><!-- End aside -->
+     
+     <div class="col-md-8">
+                  <div class="tab-content">
+                    <%unless @aboutme.nil? %>                    
+                        <div class="tab-pane fade in active" id="profile_teacher">
+                        <h3>Gyan Nagpal</h3>
+                          <%=raw @aboutme.content_for(:body) %>
+                        </div><!-- End tab-pane --> 
+                    <%end %>              
+                       <div class="tab-pane fade in" id="courses">
+                            <h3>Active Books</h3>
+                       </div><!-- End tab-pane -->
+                       
+                  </div>   <!-- End content-->              
+    
+     </div><!-- End col-md-8-->     
+  </div><!-- End row-->   
+</div><!-- End container -->
+</section><!-- End main_content-->

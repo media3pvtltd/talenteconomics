@@ -1,0 +1,74 @@
+<%= form_for [refinery, :profiles_admin, @profile] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @profile,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :location -%>
+    <%= f.text_field :location -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :certification_date -%>
+    <%= f.datetime_select :certification_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:content],
+                :object => "profiles/profile" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :picture -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :picture_id,
+               :image => @profile.picture,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :google_profile -%>
+    <%= f.text_field :google_profile -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :facebook_profile -%>
+    <%= f.text_field :facebook_profile -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :twitter_profile -%>
+    <%= f.text_field :twitter_profile -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :linkedin_profile -%>
+    <%= f.text_field :linkedin_profile -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.profiles.admin.profiles.profile'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @profile.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

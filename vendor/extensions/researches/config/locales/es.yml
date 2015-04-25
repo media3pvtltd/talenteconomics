@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+#        article: masculino/femenino
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Crear nuevo research
+            reorder: Reordenar researches
+            reorder_done: Reordenación de researches completada
+          records:
+            title: Researches
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay researches todavía. Pulsa en "Crear nuevo Research" para crear tu primer research.
+          research:
+            view_live_html: Ver este research como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este research
+            delete: Borrar este research para siempre
+      researches:
+        show:
+          other: Otros researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

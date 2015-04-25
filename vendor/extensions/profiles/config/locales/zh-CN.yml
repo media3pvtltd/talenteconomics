@@ -1,0 +1,38 @@
+zh-CN:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: 建立新的 Profile
+            reorder: 对 Profiles 重新排序
+            reorder_done: 对 Profiles 的重新排序结束
+          records:
+            title: Profiles
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Profiles yet. Click "Add New Profile" to add your first profile.
+            no_items_yet: 目前没有 Profiles . 点击 "Add New Profile" 创建一个profile.
+          profile:
+            view_live_html: 查看 profile 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 profile
+            delete: 永久删除 profile
+      profiles:
+        show:
+          other: 其他 Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        name: Name
+        location: Location
+        certification_date: Certification Date
+        email: Email
+        content: Content
+        picture: Picture
+        google_profile: Google Profile
+        facebook_profile: Facebook Profile
+        twitter_profile: Twitter Profile
+        linkedin_profile: Linkedin Profile

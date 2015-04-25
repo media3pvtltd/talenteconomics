@@ -1,0 +1,20 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(bte_testimonial) -%>">
+  <span class='title'>
+    <%= bte_testimonial.name %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.bte_testimonials_bte_testimonial_path(bte_testimonial),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_bte_testimonials_admin_bte_testimonial_path(bte_testimonial),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.bte_testimonials_admin_bte_testimonial_path(bte_testimonial),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => bte_testimonial.name),
+        :method => :delete %>
+  </span>
+</li>

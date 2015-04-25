@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      bte_galleries:
+        title: Bte Galleries
+#        article: masculino/femenino
+    bte_galleries:
+      admin:
+        bte_galleries:
+          actions:
+            create_new: Crear nuevo bte gallery
+            reorder: Reordenar bte galleries
+            reorder_done: Reordenación de bte galleries completada
+          records:
+            title: Bte Galleries
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay bte galleries todavía. Pulsa en "Crear nuevo Bte Gallery" para crear tu primer bte gallery.
+          bte_gallery:
+            view_live_html: Ver este bte gallery como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este bte gallery
+            delete: Borrar este bte gallery para siempre
+      bte_galleries:
+        show:
+          other: Otros bte galleries
+  activerecord:
+    attributes:
+      'refinery/bte_galleries/bte_gallery':
+        photo: Photo
+        caption: Caption

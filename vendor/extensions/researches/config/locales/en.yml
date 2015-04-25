@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Add New Research
+            reorder: Reorder Researches
+            reorder_done: Done Reordering Researches
+          records:
+            title: Researches
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Researches yet. Click "Add New Research" to add your first research.
+          research:
+            view_live_html: View this research live <br/><em>(opens in a new window)</em>
+            edit: Edit this research
+            delete: Remove this research forever
+      researches:
+        show:
+          other: Other Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category

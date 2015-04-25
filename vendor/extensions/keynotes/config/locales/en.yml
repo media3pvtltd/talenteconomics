@@ -1,0 +1,31 @@
+en:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: Add New Keynote
+            reorder: Reorder Keynotes
+            reorder_done: Done Reordering Keynotes
+          records:
+            title: Keynotes
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Keynotes yet. Click "Add New Keynote" to add your first keynote.
+          keynote:
+            view_live_html: View this keynote live <br/><em>(opens in a new window)</em>
+            edit: Edit this keynote
+            delete: Remove this keynote forever
+      keynotes:
+        show:
+          other: Other Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

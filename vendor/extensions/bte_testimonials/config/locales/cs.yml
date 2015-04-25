@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      bte_testimonials:
+        title: Bte Testimonials
+    bte_testimonials:
+      admin:
+        bte_testimonials:
+          actions:
+            create_new: Přidat Bte Testimonial
+            reorder: Řadit Bte Testimonials
+            reorder_done: Konec řazení Bte Testimonials
+          records:
+            title: Bte Testimonials
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Bte Testimonials. Zvolte "Přidat Bte Testimonial" pro přidání prvního bte testimonial.
+          bte_testimonial:
+            view_live_html: Zobrazit náhled bte testimonial<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit bte testimonial
+            delete: Smazat bte testimonial
+      bte_testimonials:
+        show:
+          other: Další Bte Testimonials
+  activerecord:
+    attributes:
+      'refinery/bte_testimonials/bte_testimonial':
+        name: Name
+        content: Content

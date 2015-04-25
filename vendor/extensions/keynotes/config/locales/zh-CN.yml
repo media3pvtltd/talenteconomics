@@ -1,0 +1,33 @@
+zh-CN:
+  refinery:
+    plugins:
+      keynotes:
+        title: Keynotes
+    keynotes:
+      admin:
+        keynotes:
+          actions:
+            create_new: 建立新的 Keynote
+            reorder: 对 Keynotes 重新排序
+            reorder_done: 对 Keynotes 的重新排序结束
+          records:
+            title: Keynotes
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Keynotes yet. Click "Add New Keynote" to add your first keynote.
+            no_items_yet: 目前没有 Keynotes . 点击 "Add New Keynote" 创建一个keynote.
+          keynote:
+            view_live_html: 查看 keynote 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 keynote
+            delete: 永久删除 keynote
+      keynotes:
+        show:
+          other: 其他 Keynotes
+  activerecord:
+    attributes:
+      'refinery/keynotes/keynote':
+        title: Title
+        content: Content
+        latitude: Latitude
+        longitude: Longitude
+        date: Date

@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      researches:
+        title: Researches
+    researches:
+      admin:
+        researches:
+          actions:
+            create_new: Aggiungi Nuovo Research
+            reorder: Riordina Researches
+            reorder_done: Termina il Riordino di Researches
+          records:
+            title: Researches
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Researches. Clicca "Aggiungi Nuovo Research" per aggiungere il tuo primo research.
+          research:
+            view_live_html: Guarda live questo research <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo research
+            delete: Rimuovi per sempre questo research
+      researches:
+        show:
+          other: Altri Researches
+  activerecord:
+    attributes:
+      'refinery/researches/research':
+        title: Title
+        file: File
+        link: Link
+        category: Category
